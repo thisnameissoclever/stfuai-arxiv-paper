@@ -161,6 +161,7 @@ Figure 2 illustrates sample API output, showing the transition from a "Sponsor" 
 The API returns word-level timestamps with associated speaker roles. We process this output through a segmentation pipeline:
 
 **Segment Boundary Detection.** We create segment boundaries when any of the following conditions are met:
+
 1. Speaker role changes (e.g., Host → Advertiser)
 2. Cumulative segment duration exceeds 60 seconds
 3. A pause of greater than 2 seconds occurs between words
@@ -186,6 +187,7 @@ Raw segment data requires validation to handle real-world edge cases:
 Semantic role-based diarization cannot detect host-read advertisements, as the speaker role remains "Host" throughout. For users requiring comprehensive ad detection, we provide an optional secondary analysis using a large language model.
 
 The full transcript (with timestamps and speaker labels) is submitted to an LLM with instructions to identify:
+
 - Third-party advertisements
 - Self-promotional content
 - Intro/outro segments
@@ -210,6 +212,7 @@ Episode durations ranged from 25 minutes to 2.5 hours, with a median duration of
 ### 4.2 Ground Truth Labeling
 
 Ground truth advertisement segments were manually annotated by listening to each episode and recording precise timestamps for:
+
 - Dynamically inserted third-party advertisements
 - Host-read sponsorship segments
 - Self-promotional content (e.g., "rate and subscribe" segments)
@@ -242,6 +245,7 @@ The system achieved high accuracy on dynamically inserted advertisements, which 
 **Failure Mode Analysis**
 
 The 5.3% miss rate on dynamically inserted ads stemmed from:
+
 - Ads with atypical formats (e.g., narrative-style ads designed to blend with content): 2.1%
 - Transcription failures due to audio quality issues: 1.8%
 - Ads shorter than the 6-second minimum threshold: 1.4%
@@ -309,6 +313,7 @@ The effectiveness of this approach stems from a fundamental characteristic of dy
 3. **Contextually distinct** - the speaker's communicative intent (selling a product) differs fundamentally from the podcast content
 
 Modern speech understanding models appear capable of detecting these contextual differences. While the exact features used by AssemblyAI's model are not publicly documented, we hypothesize that the classification leverages a combination of:
+
 - Prosodic features (pitch variation, speaking rate, emphasis patterns common in advertising)
 - Lexical cues (product names, calls-to-action, promotional language)
 - Discourse structure (lack of conversational back-and-forth, self-contained messaging)
@@ -320,17 +325,20 @@ Modern speech understanding models appear capable of detecting these contextual 
 **API Dependency and Local Alternatives.** The current implementation relies on AssemblyAI's commercial API for semantic role classification. This introduces cost (~$0.12/hour), requires network connectivity, and creates dependency on continued service availability.
 
 Open-source alternatives exist for components of the pipeline but not the complete system:
+
 - **Whisper** [20] provides high-quality open-source transcription but no speaker diarization
 - **pyannote.audio** [14] provides speaker diarization but outputs anonymous labels ("Speaker A") rather than semantic roles
 - **Whisper + pyannote** combinations provide transcription with anonymous diarization
 
 The critical missing component is **semantic role classification** - determining whether a speaker functions as Host, Guest, or Advertiser. This capability appears unique to AssemblyAI's `speech_understanding` API at present. A fully open-source implementation would require:
+
 1. Fine-tuning a classification model on labeled podcast data with speaker role annotations
 2. Integrating this classifier with existing diarization pipelines
 
 We identify this as a promising direction for future work: developing open-source models that classify speaker roles in podcast audio, enabling local inference without API dependency.
 
 **Novel Ad Formats.** As advertisers adapt to detection methods, we anticipate evolution in ad delivery. Possible countermeasures include:
+
 - Ads voiced by the same speakers as podcast hosts (voice cloning)
 - Ads designed to mimic conversational podcast content
 - Dynamic insertion of host-read ad scripts
@@ -356,6 +364,7 @@ We do not claim that ad-skipping is ethically neutral, but we believe the techno
 While our evaluation focused on English-language podcasts, the approach should generalize to other languages supported by the underlying speech model. The semantic role-based classification relies on universal features of advertising discourse rather than language-specific patterns.
 
 The methodology may also apply to adjacent domains:
+
 - **Video streaming:** Detecting dynamically inserted video advertisements
 - **Radio broadcasts:** Identifying commercial breaks in internet radio streams
 - **Audiobooks:** Detecting publisher promotions inserted into audiobook content

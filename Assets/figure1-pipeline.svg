@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#374151"/>
+    </marker>
+    <linearGradient id="hostGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#10B981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="adGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#EF4444;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#DC2626;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="apiGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#6366F1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4F46E5;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="900" height="400" fill="#F9FAFB"/>
+  
+  <!-- Title -->
+  <text x="450" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#111827">Figure 1: Semantic Role-Based Advertisement Detection Pipeline</text>
+  
+  <!-- Step 1: Podcast Audio -->
+  <rect x="30" y="80" width="120" height="70" rx="8" fill="#E5E7EB" stroke="#9CA3AF" stroke-width="2"/>
+  <text x="90" y="110" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#374151">Podcast</text>
+  <text x="90" y="128" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#374151">Audio</text>
+  <text x="90" y="145" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#6B7280">(MP3/M4A)</text>
+  
+  <!-- Arrow 1 -->
+  <line x1="150" y1="115" x2="185" y2="115" stroke="#374151" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Step 2: Compression (Optional) -->
+  <rect x="190" y="70" width="120" height="90" rx="8" fill="#FEF3C7" stroke="#F59E0B" stroke-width="2" stroke-dasharray="5,3"/>
+  <text x="250" y="95" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#92400E">Compress</text>
+  <text x="250" y="110" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#92400E">(optional)</text>
+  <text x="250" y="128" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#B45309">Based on file size,</text>
+  <text x="250" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#B45309">audio length, and</text>
+  <text x="250" y="152" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#B45309">network speed</text>
+  
+  <!-- Arrow 2 -->
+  <line x1="310" y1="115" x2="345" y2="115" stroke="#374151" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Step 3: AssemblyAI API -->
+  <rect x="350" y="70" width="160" height="90" rx="8" fill="url(#apiGrad)" stroke="#4338CA" stroke-width="2"/>
+  <text x="430" y="98" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="white">AssemblyAI</text>
+  <text x="430" y="118" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#E0E7FF">speech_understanding</text>
+  <text x="430" y="138" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#C7D2FE">speaker_type: "role"</text>
+  <text x="430" y="152" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#A5B4FC">Host | Guest | Advertiser | Sponsor</text>
+  
+  <!-- Arrow 3 -->
+  <line x1="510" y1="115" x2="545" y2="115" stroke="#374151" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Step 4: Segment Processing -->
+  <rect x="550" y="70" width="140" height="90" rx="8" fill="#DBEAFE" stroke="#3B82F6" stroke-width="2"/>
+  <text x="620" y="95" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#1E40AF">Segment</text>
+  <text x="620" y="112" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#1E40AF">Processing</text>
+  <text x="620" y="132" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#1D4ED8">• Merge consecutive</text>
+  <text x="620" y="145" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#1D4ED8">• Filter &lt;6s segments</text>
+  <text x="620" y="158" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#1D4ED8">• Validate bounds</text>
+  
+  <!-- Arrow 4 -->
+  <line x1="690" y1="115" x2="725" y2="115" stroke="#374151" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Step 5: Playback -->
+  <rect x="730" y="80" width="140" height="70" rx="8" fill="#D1FAE5" stroke="#10B981" stroke-width="2"/>
+  <text x="800" y="108" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#065F46">Ad-Free</text>
+  <text x="800" y="126" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#065F46">Playback</text>
+  <text x="800" y="143" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#047857">auto-skip enabled</text>
+  
+  <!-- Lower section: Sample transcript visualization -->
+  <text x="450" y="200" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#374151">Sample Output: Speaker Role Classification</text>
+  
+  <!-- Timeline bar background -->
+  <rect x="50" y="230" width="800" height="50" rx="4" fill="#E5E7EB" stroke="#9CA3AF" stroke-width="1"/>
+  
+  <!-- Ad segment (0-59s) -->
+  <rect x="50" y="230" width="363" height="50" rx="4" fill="url(#adGrad)"/>
+  <text x="231" y="250" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white">SPONSOR</text>
+  <text x="231" y="268" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#FEE2E2">"This Marketplace podcast is supported by Wealth Enhancement..."</text>
+  
+  <!-- Host segment (59-652s) -->
+  <rect x="413" y="230" width="437" height="50" rx="4" fill="url(#hostGrad)"/>
+  <text x="631" y="250" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white">HOST</text>
+  <text x="631" y="268" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#D1FAE5">"Teens are using chatbots for way more than homework help..."</text>
+  
+  <!-- Time markers -->
+  <text x="50" y="298" text-anchor="start" font-family="Arial, sans-serif" font-size="10" fill="#6B7280">0:00</text>
+  <text x="413" y="298" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#6B7280">0:59</text>
+  <text x="850" y="298" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#6B7280">10:52</text>
+  
+  <!-- Transition indicator -->
+  <line x1="413" y1="225" x2="413" y2="285" stroke="#374151" stroke-width="2" stroke-dasharray="4,2"/>
+  <text x="413" y="318" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#374151">↑ Role Transition Detected</text>
+  
+  <!-- Legend -->
+  <rect x="50" y="340" width="20" height="15" rx="3" fill="url(#adGrad)"/>
+  <text x="78" y="352" text-anchor="start" font-family="Arial, sans-serif" font-size="11" fill="#374151">Skippable (Advertiser/Sponsor)</text>
+  
+  <rect x="280" y="340" width="20" height="15" rx="3" fill="url(#hostGrad)"/>
+  <text x="308" y="352" text-anchor="start" font-family="Arial, sans-serif" font-size="11" fill="#374151">Editorial Content (Host/Guest)</text>
+  
+  <rect x="520" y="340" width="20" height="15" rx="3" fill="url(#apiGrad)"/>
+  <text x="548" y="352" text-anchor="start" font-family="Arial, sans-serif" font-size="11" fill="#374151">AssemblyAI Speech Understanding API</text>
+</svg>
