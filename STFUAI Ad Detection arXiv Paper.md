@@ -32,9 +32,11 @@ Existing approaches to advertisement detection face fundamental limitations in t
 
 **Transcript-based classification** can identify promotional language patterns but cannot distinguish between a host discussing a product editorially versus delivering a sponsored message about the same product.
 
-Figure 3 summarizes these limitations and contrasts them with our approach.
+Figure 1 summarizes these limitations and contrasts them with our approach.
 
-**[Figure 3: Comparison of Advertisement Detection Approaches - see figure3-comparison.svg]**
+![Figure 1: Comparison of Advertisement Detection Approaches](Assets/figure1-comparison.png)
+
+*Figure 1: Comparison of Advertisement Detection Approaches*
 
 We observe that dynamically inserted podcast advertisements share a common characteristic that existing approaches overlook: *they are spoken by different people than the podcast hosts*. While the audio is engineered to blend seamlessly, the speaker is fundamentally distinct - a professional voice actor, an advertiser's spokesperson, or a pre-recorded promotional read. This observation suggests reframing advertisement detection as a speaker classification problem rather than a content analysis or acoustic matching problem.
 
@@ -127,13 +129,17 @@ We utilize AssemblyAI's `speech_understanding` API with the following configurat
 }
 ```
 
-This instructs the transcription service to label each word and utterance with a role classification. The service's underlying model determines these roles based on contextual cues including speech patterns, content semantics, and positional features within the audio. Figure 1 illustrates the complete detection pipeline.
+This instructs the transcription service to label each word and utterance with a role classification. The service's underlying model determines these roles based on contextual cues including speech patterns, content semantics, and positional features within the audio. Figure 2 illustrates the complete detection pipeline.
 
-**[Figure 1: Semantic Role-Based Advertisement Detection Pipeline - see figure1-pipeline.svg]**
+![Figure 2: Semantic Role-Based Advertisement Detection Pipeline](Assets/figure2-pipeline.png)
 
-Figure 2 illustrates sample API output, showing the transition from a "Sponsor" segment to a "Host" segment:
+*Figure 2: Semantic Role-Based Advertisement Detection Pipeline*
 
-**[Figure 2: Episode Timeline with Semantic Speaker Roles - see figure2-timeline.svg]**
+Figure 3 illustrates sample API output, showing the transition from a "Sponsor" segment to a "Host" segment:
+
+![Figure 3: Episode Timeline with Semantic Speaker Roles](Assets/figure3-timeline.png)
+
+*Figure 3: Episode Timeline with Semantic Speaker Roles*
 
 ```json
 {
