@@ -1,0 +1,56 @@
+[
+    {
+        "startTime": "0:00",
+        "endTime": "0:33",
+        "startTimeSeconds": 0.16,
+        "endTimeSeconds": 33.82,
+        "confidence": 100,
+        "type": "advertisement",
+        "description": "Detected via transcript diarization analysis. Click \"Analyze\" to perform advanced skippable segment detection."
+    },
+    {
+        "startTime": "19:32",
+        "endTime": "21:05",
+        "startTimeSeconds": 1172.75,
+        "endTimeSeconds": 1265.87,
+        "confidence": 100,
+        "type": "advertisement",
+        "description": "Detected via transcript diarization analysis. Click \"Analyze\" to perform advanced skippable segment detection."
+    },
+    {
+        "startTime": "35:55",
+        "endTime": "36:26",
+        "startTimeSeconds": 2155.4,
+        "endTimeSeconds": 2186.77,
+        "confidence": 100,
+        "type": "advertisement",
+        "description": "Detected via transcript diarization analysis. Click \"Analyze\" to perform advanced skippable segment detection."
+    },
+    {
+        "startTime": "36:39",
+        "endTime": "36:51",
+        "startTimeSeconds": 2199.47,
+        "endTimeSeconds": 2211.71,
+        "confidence": 100,
+        "type": "advertisement",
+        "description": "Detected via transcript diarization analysis. Click \"Analyze\" to perform advanced skippable segment detection."
+    },
+    {
+        "startTime": "37:06",
+        "endTime": "37:24",
+        "startTimeSeconds": 2226.2,
+        "endTimeSeconds": 2244.68,
+        "confidence": 100,
+        "type": "advertisement",
+        "description": "Detected via transcript diarization analysis. Click \"Analyze\" to perform advanced skippable segment detection."
+    },
+    {
+        "startTime": "39:21",
+        "endTime": "39:52",
+        "startTimeSeconds": 2361.8,
+        "endTimeSeconds": 2392.53,
+        "confidence": 100,
+        "type": "advertisement",
+        "description": "Detected via transcript diarization analysis. Click \"Analyze\" to perform advanced skippable segment detection."
+    }
+]
