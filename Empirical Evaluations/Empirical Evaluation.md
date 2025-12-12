@@ -6,12 +6,11 @@ This document contains ground-truth evaluation data for 20 podcast episodes acro
 
 ### Podcasts Evaluated
 
-| Category  | Podcast                           | Episodes |
-| --------- | --------------------------------- | -------- |
-| News      | The Daily (NYT)                   | 5        |
-| News      | Up First (NPR)                    | 5        |
-| Narrative | The Way I Heard It with Mike Rowe | 5        |
-| Self-Help | Happier with Gretchen Rubin       | 5        |
+| Podcast          | Episodes |
+| ---------------- | -------- |
+| The Daily (NYT)  | 5        |
+| Marketplace Tech | 5        |
+| Today, Explained | 5        |
 
 ### Advertisement Definition
 

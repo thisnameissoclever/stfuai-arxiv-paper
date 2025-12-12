@@ -1,0 +1,29 @@
+[
+    {
+        "startTime": "1:42",
+        "endTime": "2:15",
+        "startTimeSeconds": 102.13,
+        "endTimeSeconds": 135.31,
+        "confidence": 100,
+        "type": "advertisement",
+        "description": "Detected via transcript diarization analysis. Click \"Analyze\" to perform advanced skippable segment detection."
+    },
+    {
+        "startTime": "15:38",
+        "endTime": "18:07",
+        "startTimeSeconds": 938.33,
+        "endTimeSeconds": 1087.29,
+        "confidence": 100,
+        "type": "advertisement",
+        "description": "Detected via transcript diarization analysis. Click \"Analyze\" to perform advanced skippable segment detection."
+    },
+    {
+        "startTime": "28:43",
+        "endTime": "29:56",
+        "startTimeSeconds": 1723.31,
+        "endTimeSeconds": 1796.5,
+        "confidence": 100,
+        "type": "advertisement",
+        "description": "Detected via transcript diarization analysis. Click \"Analyze\" to perform advanced skippable segment detection."
+    }
+]
